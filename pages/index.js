@@ -1,15 +1,23 @@
-import Link from "next/link";
+import { useRouter } from "next/router";;
 
-function Home() {
+function ActiveLink({ children, href }) {
+  const router = useRouter();;
+  const style = {
+    marginRight: 10,
+    color: router.asPath === href ? "red" : "black",
+  };;
+
+  const handleClick = (e) => {
+    e.preventDefault();;
+    router.push(href);;
+  };;
+
   return (
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-    </ul>
-  );
+    <a href={href} onClick={handleClick} style={style}>
+      {children}
+    </a>
+  );;
 }
 
-export default Home;
+export default ActiveLink;
+;

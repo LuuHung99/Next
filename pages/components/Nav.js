@@ -1,5 +1,8 @@
-import { useState } from "react";
-
-export default function Home() {
-  return <h2>sadad fdsfs 123131 32</h2>;
+export default function ReadMore() {
+  return (
+    <>
+      <button type="button">Click here to read more</button>
+      <h2></h2>
+    </>
+  );
 }
